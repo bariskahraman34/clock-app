@@ -34,7 +34,7 @@ body.evening{
 
 .container{
     margin-inline: auto;
-    max-width: 1280px;
+    max-width: 1440px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -155,9 +155,9 @@ body.evening{
 .details-container.active{
     padding: 48px 26px;
     background:#c7c8c8;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    row-gap: 16px;
 
     div{
         display: flex;
@@ -178,5 +178,181 @@ body.evening{
         line-height: 24px;
         text-align: right;
         color: rgba(48, 48, 48, 1);
+    }
+}
+
+body.evening .details-container.active{
+    background:rgba(0, 0, 0, 0.75);
+    h5{
+        color: #fff;
+    }
+
+    p{
+        color: #fff;
+    }
+}
+
+/* Media Queries */
+
+/* Tablet */
+
+@media(width >= 768px){
+    .content{
+        padding: 80px 130px 64px 64px;
+    }
+    .quote-container{
+        blockquote ,h3{
+            font-size: 18px;
+            line-height: 28px;
+        }
+    }
+
+    .current-time-container div{
+        margin-bottom: 0px;
+    }
+    .greeting-container{
+        span{            
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 3.5999999046325684px;
+        }
+    }
+    .time-container .time{
+        font-size: 175px;
+        line-height: 175px;
+        letter-spacing: -4.375px;
+    }
+    .time-container .time-zone{
+        font-size: 32px;
+        font-weight: 300;
+        line-height: 28px;
+    }
+    .location{
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 28px;
+        letter-spacing: 3.5999999046325684px;
+    }
+    .more-btn{
+        border-radius: 25px;
+        margin-top: 80px !important;
+        width: 146px;
+        span{
+            font-size: 16px;
+            line-height: 28px;
+            letter-spacing: 5px;
+            margin-left: 6px;
+        }
+        i{
+            padding: 14px;
+            right: 8px;
+        }
+    }
+
+    .details-container.active {
+        padding: 119px 166px 119px 64px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 48px;
+        column-gap: 80px;
+        
+        div{
+            flex-direction: column;
+            h5{
+                font-size: 13px;
+            }
+            p{
+                text-align: left;
+                font-size: 40px;
+                line-height: 48px;
+            }
+        }
+    }
+}
+
+
+ /* Desktop */
+
+@media(width >= 1110px){
+    .content{
+        padding: 56px 165px 98px 165px;
+    }
+    .quotes-container{
+        justify-content: flex-start;
+    }
+    .quote-container{
+        width: 540px;
+        blockquote ,h3{
+            font-size: 18px;
+            line-height: 28px;
+        }
+    }
+
+    .current-time-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .current-time-container div{
+        margin-bottom: 0px;
+    }
+    .greeting-container{
+        span{            
+            font-size: 20px;
+            line-height: 28px;
+            letter-spacing: 4px;
+        }
+    }
+    .time-container .time{
+        font-size: 200px;
+        line-height: 200px;
+        letter-spacing: -5px;
+    }
+    .time-container .time-zone{
+        font-size: 40px;
+        font-weight: 300;
+        line-height: 28px;
+    }
+    .location{
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 28px;
+        letter-spacing: 4.7999999046325684px;
+    }
+    .more-btn{
+        border-radius: 25px;
+        margin-top: 80px !important;
+        width: 146px;
+        span{
+            font-size: 16px;
+            line-height: 28px;
+            letter-spacing: 5px;
+            margin-left: 6px;
+        }
+        i{
+            padding: 14px;
+            right: 8px;
+        }
+    }
+
+    .details-container.active {
+        padding: 74px 165px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 48px;
+        column-gap: 80px;
+        
+        div{
+            flex-direction: column;
+            h5{
+                font-size: 15px;
+            }
+            p{
+                text-align: left;
+                font-size: 56px;
+                line-height: 67px;
+            }
+        }
     }
 }
