@@ -27,20 +27,10 @@ async function getNewQuote(){
     return renderQuote(data)
 }
 
-async function waitForGeolocation() {
-    return new Promise((resolve, reject) => {
-        navigator.geolocation.getCurrentPosition(resolve, reject);
-    });
-}
-
 async function getUserLocation(){
-    if(navigator.geolocation){
-        const response = await fetch('https://ipapi.co/json/');
-        const data = await response.json();
-        return renderUserLocation(data);
-    }else{
-        console.log('konum bilgisine ulaşılamadı.')
-    }
+    const response = await fetch('https://ipapi.co/json/');
+    const data = await response.json();
+    return renderUserLocation(data);
 }
 
 async function renderQuote(quote){
