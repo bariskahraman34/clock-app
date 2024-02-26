@@ -5,16 +5,31 @@
 }
 
 body{
-    background:url('../img/morning-image.png') , rgba(0, 0, 0, 0.4);
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: cover;
+
     background-blend-mode: darken;
     height: 100vh;
     width: 100vw;
     color: #fff;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
+}
+
+body.morning{
+    background:url('../img/morning-image.png') , rgba(0, 0, 0, 0.4);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+body.evening{
+    background:url('../img/evening-image.png') , rgba(0, 0, 0, 0.4);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+.d-none{
+    display: none !important;
 }
 
 .container{
