@@ -86,10 +86,10 @@ function showDeatils(){
     document.querySelector('.quotes-container').classList.toggle('d-none');
 
     if(moreBtn.firstChild.textContent === "MORE"){
-        moreBtn.firstChild.textContent = "LESS";
+        moreBtn.innerHTML = '<span>LESS</span><i class="fa-solid fa-chevron-up arrow"></i>';
         document.querySelector('.details-container').classList.toggle('active');
     }else{
-        moreBtn.firstChild.textContent = "MORE";
+        moreBtn.innerHTML = '<span>MORE</span><i class="fa-solid fa-chevron-down arrow"></i>';
         document.querySelector('.details-container').classList.toggle('active');
     }
 }

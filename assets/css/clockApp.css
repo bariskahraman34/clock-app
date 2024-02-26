@@ -8,7 +8,6 @@ body{
 
     background-blend-mode: darken;
     height: 100vh;
-    width: 100vw;
     color: #fff;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -133,7 +132,7 @@ body.evening{
     text-align: left;
 }
 
-.fa-chevron-down{
+.arrow{
     position: absolute;
     text-align: center;
     padding: 10px;
