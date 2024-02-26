@@ -6,6 +6,10 @@ const timeContent = document.querySelector('.time');
 const timezoneMessage = document.querySelector('.timezone-message');
 const timezone = document.querySelector('.time-zone');
 const moreBtn = document.querySelector('.more-btn');
+const currentTimezoneContent = document.querySelector('#current-timezone-content');
+const dayOfYearContent = document.querySelector('#day-of-year-content');
+const dayOfWeekContent = document.querySelector('#day-of-week-content');
+const weekNumberContent = document.querySelector('#week-number-content');
 
 changeBtn.addEventListener('click',getNewQuote);
 
@@ -29,20 +33,30 @@ async function renderQuote(quote){
 }
 
 async function renderUserLocation(userInfos){
+    console.log(userInfos)
     userLocationContent.textContent = 
     `
         IN ${userInfos.city.toLocaleUpperCase()}, 
         ${userInfos.countryCode.toLocaleUpperCase()}
     `;
+    currentTimezoneContent.innerHTML = `${userInfos.timezone}`;
 }
 
 
-timezone.innerHTML = `${new Date().toString().split(' ')[2]} ${new Date().toString().split(' ')[1]}`
 
 function updateTime() {
     const currentDate = new Date();
     let hours = currentDate.getHours();
     let minutes = currentDate.getMinutes();
+    const startOfYear = new Date(currentDate.getFullYear() ,0 ,1);
+    const diff = currentDate - startOfYear;
+    const oneDay = 1000 * 60 * 60 * 24;
+    const dayOfYear = Math.floor(diff / oneDay);
+    const weekOfYear = Math.floor(diff / (7 * 24 * 60 * 60 * 1000)) + 1;
+    dayOfYearContent.innerHTML = `${dayOfYear}`;
+    dayOfWeekContent.innerHTML = `${currentDate.getDay()}`;
+    weekNumberContent.innerHTML = `${weekOfYear}`;
+    timezone.innerHTML = `${new Date().toString().split(' ')[2]} ${new Date().toString().split(' ')[1]}`
 
     hours = hours % 24;
 
@@ -73,8 +87,10 @@ function showDeatils(){
 
     if(moreBtn.firstChild.textContent === "MORE"){
         moreBtn.firstChild.textContent = "LESS";
+        document.querySelector('.details-container').classList.toggle('active');
     }else{
         moreBtn.firstChild.textContent = "MORE";
+        document.querySelector('.details-container').classList.toggle('active');
     }
 }
 
