@@ -5,7 +5,7 @@
 }
 
 body{
-
+    overflow: hidden;
     background-blend-mode: darken;
     height: 100vh;
     color: #fff;
@@ -236,6 +236,7 @@ body.evening .details-container.active{
         border-radius: 25px;
         margin-top: 80px !important;
         width: 146px;
+        
         span{
             font-size: 16px;
             line-height: 28px;
@@ -320,19 +321,7 @@ body.evening .details-container.active{
         letter-spacing: 4.7999999046325684px;
     }
     .more-btn{
-        border-radius: 25px;
-        margin-top: 80px !important;
-        width: 146px;
-        span{
-            font-size: 16px;
-            line-height: 28px;
-            letter-spacing: 5px;
-            margin-left: 6px;
-        }
-        i{
-            padding: 14px;
-            right: 8px;
-        }
+        margin-top: 0px;
     }
 
     .details-container.active {

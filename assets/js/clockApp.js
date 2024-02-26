@@ -11,6 +11,8 @@ const dayOfYearContent = document.querySelector('#day-of-year-content');
 const dayOfWeekContent = document.querySelector('#day-of-week-content');
 const weekNumberContent = document.querySelector('#week-number-content');
 
+document.body.style.height = window.innerHeight + 'px';
+
 changeBtn.addEventListener('click',getNewQuote);
 
 moreBtn.addEventListener('click',showDeatils);
