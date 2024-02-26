@@ -11,7 +11,11 @@ const dayOfYearContent = document.querySelector('#day-of-year-content');
 const dayOfWeekContent = document.querySelector('#day-of-week-content');
 const weekNumberContent = document.querySelector('#week-number-content');
 
-document.body.style.height = window.innerHeight + 'px';
+
+window.addEventListener('resize', function(){
+    const newHeight = window.innerHeight;
+    document.body.style.height = `${newHeight}px`;
+})
 
 changeBtn.addEventListener('click',getNewQuote);
 
@@ -23,10 +27,21 @@ async function getNewQuote(){
     return renderQuote(data)
 }
 
+async function waitForGeolocation() {
+    return new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(resolve, reject);
+    });
+}
+
 async function getUserLocation(){
-    const response = await fetch('http://ip-api.com/json');
-    const data = await response.json();
-    return renderUserLocation(data);
+    if(navigator.geolocation){
+        await waitForGeolocation();
+        const response = await fetch('http://ip-api.com/json');
+        const data = await response.json();
+        return renderUserLocation(data);
+    }else{
+        console.log('konum bilgisine ulaşılamadı.')
+    }
 }
 
 async function renderQuote(quote){
