@@ -35,8 +35,7 @@ async function waitForGeolocation() {
 
 async function getUserLocation(){
     if(navigator.geolocation){
-        await waitForGeolocation();
-        const response = await fetch('http://ip-api.com/json');
+        const response = await fetch('https://ipapi.co/json/');
         const data = await response.json();
         return renderUserLocation(data);
     }else{
@@ -54,7 +53,7 @@ async function renderUserLocation(userInfos){
     userLocationContent.textContent = 
     `
         IN ${userInfos.city.toLocaleUpperCase()}, 
-        ${userInfos.countryCode.toLocaleUpperCase()}
+        ${userInfos.country_code.toLocaleUpperCase()}
     `;
     currentTimezoneContent.innerHTML = `${userInfos.timezone}`;
 }
