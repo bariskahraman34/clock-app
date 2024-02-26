@@ -12,4 +12,117 @@ body{
     background-blend-mode: darken;
     height: 100vh;
     width: 100vw;
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.container{
+    margin-inline: auto;
+    max-width: 1280px;
+    padding: 32px 25px 40px 25px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.quotes-container{
+    display: flex;
+    align-items: flex-start;
+
+    button{
+        border: none;
+        background-color:transparent;
+        color: rgba(255,255,255, .7);
+        font-size: 17px;
+        cursor: pointer;
+        padding: 5px;
+    }
+}
+
+.quote-container{
+    blockquote{
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 22px;
+        margin-bottom: 8px;
+        margin-right: 12px;
+    }
+
+    h3{
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 22px;
+    }
+}
+
+.current-time-container{
+    div{
+        margin-bottom: 16px;
+    }
+    button{
+        margin-top: 24px;
+    }
+}
+
+.greeting-container{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    span{
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 25px;
+        letter-spacing: 3px;
+    }
+}
+
+.time-container .time{
+    font-size: 100px;
+    font-weight: 700;
+    line-height: 100px;
+    letter-spacing: -2.5px;
+}
+
+.time-container .time-zone{
+    font-size: 15px;
+    font-weight: 100;
+    line-height: 28px;
+}
+
+.location{
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 3px;
+}
+
+.more-btn{
+    position: relative;
+    width: 115px;
+    border: none;
+    background-color: #fff;
+    padding: 13px 0px 13px 17px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    letter-spacing: 3.75px;
+    color: rgba(0, 0, 0, .6);
+    border-radius: 20px;
+    text-align: left;
+}
+
+.fa-chevron-down{
+    position: absolute;
+    text-align: center;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: rgba(48, 48, 48, 1);
+    color: #fff;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    letter-spacing: 0px;
 }
