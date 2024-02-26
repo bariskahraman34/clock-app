@@ -1,0 +1,15 @@
+*, *::after ,*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background:url('../img/morning-image.png') , rgba(0, 0, 0, 0.4);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-blend-mode: darken;
+    height: 100vh;
+    width: 100vw;
+}
