@@ -11,12 +11,6 @@ const dayOfYearContent = document.querySelector('#day-of-year-content');
 const dayOfWeekContent = document.querySelector('#day-of-week-content');
 const weekNumberContent = document.querySelector('#week-number-content');
 
-
-window.addEventListener('resize', function(){
-    const newHeight = window.innerHeight;
-    document.body.style.height = `${newHeight}px`;
-})
-
 changeBtn.addEventListener('click',getNewQuote);
 
 moreBtn.addEventListener('click',showDeatils);
@@ -65,10 +59,11 @@ function updateTime() {
     timezone.innerHTML = `${new Date().toString().split(' ')[2]} ${new Date().toString().split(' ')[1]}`
 
     hours = hours % 24;
+    console.log(hours);
 
-    if(hours < 5 && hours > 12){
+    if(hours >= 5 && hours <= 12){
         timezoneMessage.innerHTML = "Good Morning".toLocaleUpperCase();
-    }else if(hours < 12 && hours > 6){
+    }else if(hours > 12 && hours <= 16){
         timezoneMessage.innerHTML = "Good Afternoon".toLocaleUpperCase();
     }else{
         timezoneMessage.innerHTML = "Good Evening".toLocaleUpperCase();
